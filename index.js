@@ -1,7 +1,7 @@
 $(function() {
   // variables
   var $title = $('.title');
-  var $toggleTitleButton = $('[name="toggle-title-button"]');
+  var $toggleTitleButton = $('.toggle-title-button');
 
   // listeners
   $toggleTitleButton.on('change', onChange);
