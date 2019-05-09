@@ -32,7 +32,7 @@ $(function() {
 
   function render() {
     $sections.hide();
-    $('.section-' + (position % 3)).show();
+    $('.section-' + (position % $sections.length)).show();
   }
 
   // executes
