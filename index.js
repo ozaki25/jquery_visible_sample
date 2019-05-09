@@ -1,21 +1,16 @@
 $(function() {
   // variables
   var $title = $('.title');
-  var $showButton = $('.show-button');
-  var $hideButton = $('.hide-button');
+  var $toggleTitleButton = $('[name="toggle-title-button"]');
 
   // listeners
-  $showButton.on('click', onClickShow);
-  $hideButton.on('click', onClickHide);
+  $toggleTitleButton.on('change', onChange);
 
   // functions
-  function onClickShow(e) {
+  function onChange(e) {
     e.preventDefault();
-    $title.show();
-  }
-
-  function onClickHide(e) {
-    e.preventDefault();
-    $title.hide();
+    var $radio = $(e.target);
+    if ($radio.val() === '0') $title.show();
+    if ($radio.val() === '1') $title.hide();
   }
 });
