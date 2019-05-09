@@ -1,6 +1,5 @@
 $(function() {
   // variables
-  var $title = $('.title');
   var $toggleTitleButton = $('.toggle-title-button');
   var $nextButton = $('.next-button');
   var $sections = $('.section');
@@ -14,8 +13,20 @@ $(function() {
   function onChange(e) {
     e.preventDefault();
     var $radio = $(e.target);
-    if ($radio.val() === '0') $title.show();
-    if ($radio.val() === '1') $title.hide();
+
+    if ($radio.val() === '0') {
+      $radio
+        .parents('.section')
+        .children('.title')
+        .show();
+    }
+
+    if ($radio.val() === '1') {
+      $radio
+        .parents('.section')
+        .children('.title')
+        .hide();
+    }
   }
 
   function onClickNext(e) {
